@@ -5,8 +5,16 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		title:"hi aravind"
+		layout: 'online-store-layout'
 	},
-	mutations: {},
-	actions: {}
+	mutations: {
+		SET_LAYOUT (state, payload) {
+			state.layout = payload
+		}
+	},
+	getters: {
+		layout (state) {
+			return state.layout
+		}
+	}
 });

@@ -1,13 +1,22 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <component v-bind:is="layout"></component>
     </div>
-    <router-view />
-  </div>
 </template>
-
+<script>
+import OnlineStoreLayout from './layouts/OnlineStoreLayout';
+import AdminPanelLayout from './layouts/AdminPanelLayout';
+export default {
+    computed: {
+        layout() {
+            return this.$store.getters.layout;
+        }
+    },
+    components: {
+        'online-store-layout': OnlineStoreLayout,
+        'admin-panel-layout': AdminPanelLayout
+    }
+}
+</script>
 <style>
-@import "./assets/css/main.css";
 </style>
