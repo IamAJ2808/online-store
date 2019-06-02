@@ -6,7 +6,9 @@
             <div class="wrap-menu-desktop" v-bind:class="{'fix-menu-desktop':(toggleFixedDesktopMenu || currentPage != 'home')}">
                 <nav class="limiter-menu-desktop container">
                     <!-- Logo desktop -->
-                      <router-link to="/" class="logo"><img src="@/assets/images/icons/logo-01.png" alt="IMG-LOGO"></router-link>
+                    <router-link to="/" class="logo">
+                        <img src="@/assets/images/icons/logo-01.png" alt="IMG-LOGO" @click="navChange('home')">
+                    </router-link>
                     <!-- Menu desktop -->
                     <div class="menu-desktop">
                         <ul class="main-menu">
@@ -14,24 +16,24 @@
                                 <router-link to="/">Home</router-link>
                             </li>
                             <li v-bind:class="{'active-menu':currentPage=='shop'}" v-on:click="navChange('shop')">
-                                <router-link to="shop">Shop</router-link>
+                                <router-link to="/shop">Shop</router-link>
                             </li>
                             <li v-bind:class="{'active-menu':currentPage=='about'}" v-on:click="navChange('about')">
-                                <router-link to="about">About</router-link>
+                                <router-link to="/about">About</router-link>
                             </li>
                             <li v-bind:class="{'active-menu':currentPage=='contact'}" v-on:click="navChange('contact')">
-                                <router-link to="contact">Contact</router-link>
+                                <router-link to="/contact">Contact</router-link>
                             </li>
                         </ul>
                     </div>
                     <!-- Icon header -->
                     <div class="wrap-icon-header flex-w flex-r-m">
-                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+                        <router-link to="/shop/shopping-cart" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="2">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        </div>
-                        <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+                        </router-link>
+                        <router-link to="/shop/wishlist" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
                             <i class="fa fa-heart-o" aria-hidden="true"></i>
-                        </a>
+                        </router-link>
                     </div>
                 </nav>
             </div>
@@ -39,16 +41,16 @@
             <div class="wrap-header-mobile" v-if="toggleMobileMenu">
                 <!-- Logo moblie -->
                 <div class="logo-mobile">
-                    <router-link to="/" ><img src="@/assets/images/icons/logo-01.png" alt="IMG-LOGO"></router-link>
+                    <router-link to="/"><img src="@/assets/images/icons/logo-01.png" alt="IMG-LOGO"></router-link>
                 </div>
                 <!-- Icon header -->
                 <div class="wrap-icon-header flex-w flex-r-m m-r-15">
-                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+                    <router-link to="/shop/shopping-cart" class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="2">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    </div>
-                    <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
+                    </router-link>
+                    <router-link to="/shop/wishlist" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
                         <i class="fa fa-heart-o" aria-hidden="true"></i>
-                    </a>
+                    </router-link>
                 </div>
                 <!-- Button show menu -->
                 <div class="btn-show-menu-mobile hamburger hamburger--squeeze" v-bind:class="{'is-active':hamburgerStatus}" @click="toggleHamburger()">
@@ -232,7 +234,11 @@ export default {
         }
     },
     created() {
-        this.currentPage = this.$route.name;
+        let routeName = this.$route.name;
+        if (routeName == "shophome" || routeName == "productdetail" || routeName == "shoppingcart" || routeName == "wishlist") {
+            routeName = "shop"
+        }
+        this.currentPage = routeName;
         window.addEventListener("scroll", this.handleScroll);
         window.addEventListener("resize", this.handleresize);
         this.handleScroll();

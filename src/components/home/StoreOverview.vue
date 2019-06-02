@@ -9,7 +9,7 @@
             <!-- Store overview tab -->
             <div class="store-overview-tab">
                 <!-- Nav tabs -->
-                <b-tabs content-class="mt-3">
+                <b-tabs content-class="p-t-43">
                     <b-tab v-for="(item,index) in tabListData" v-bind:title="item.tabName" v-bind:key="index" v-bind:class="{active:currentActiveTab==item.tabName}" @click="setCurrentTab(item.tabName)">
                         <StoreOverviewCarousel v-if="currentActiveTab==item.tabName" v-bind:current-tab-data="item" />
                     </b-tab>
@@ -19,7 +19,7 @@
     </section>
 </template>
 <script>
-import StoreOverviewCarousel from "@/components/StoreOverviewCarousel.vue";
+import StoreOverviewCarousel from "@/components/home/StoreOverviewCarousel.vue";
 export default {
     name: "StoreOverview",
     components: {

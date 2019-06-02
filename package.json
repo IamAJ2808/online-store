@@ -13,8 +13,10 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "vue": "^2.6.10",
+    "vue-images-loaded": "^1.1.2",
     "vue-router": "^3.0.3",
     "vue-slick": "^1.1.15",
+    "vue-star-rating": "^1.6.1",
     "vueisotope": "^3.1.2",
     "vuex": "^3.1.1"
   },

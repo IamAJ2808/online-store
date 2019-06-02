@@ -68,7 +68,7 @@
     </section>
 </template>
 <script>
-import '../../node_modules/slick-carousel/slick/slick.css';
+import '@/../node_modules/slick-carousel/slick/slick.css';
 import Slick from 'vue-slick';
 
 export default {
@@ -98,14 +98,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .slide1 {
-    background-image: url(../assets/images/slide-04.jpg);
+    background-image: url(../../assets/images/slide-04.jpg);
 }
 
 .slide2 {
-    background-image: url(../assets/images/slide-01.jpg);
+    background-image: url(../../assets/images/slide-01.jpg);
 }
 
 .slide3 {
-    background-image: url(../assets/images/slide-03.jpg);
+    background-image: url(../../assets/images/slide-03.jpg);
 }
 </style>

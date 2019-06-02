@@ -19,8 +19,8 @@
                     </div>
                     <div class="block2-txt-child2 flex-r p-t-3">
                         <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                            <img class="icon-heart1 dis-block trans-04" src="../assets/images/icons/icon-heart-01.png" alt="ICON">
-                            <img class="icon-heart2 dis-block trans-04 ab-t-l" src="../assets/images/icons/icon-heart-02.png" alt="ICON">
+                            <img class="icon-heart1 dis-block trans-04" src="@/assets/images/icons/icon-heart-01.png" alt="ICON">
+                            <img class="icon-heart2 dis-block trans-04 ab-t-l" src="@/assets/images/icons/icon-heart-02.png" alt="ICON">
                         </a>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
     </slick>
 </template>
 <script>
-import '../../node_modules/slick-carousel/slick/slick.css';
+import '@/../node_modules/slick-carousel/slick/slick.css';
 import Slick from 'vue-slick';
 
 export default {
@@ -82,7 +82,7 @@ export default {
     // All slick methods can be used too, example here
     methods: {
         getImgPath(imgName) {
-            return imgName ? require('../assets/images/'+imgName) : '';
+            return imgName ? require('@/assets/images/'+imgName) : '';
         }
     },
     props: ["currentTabData"]
