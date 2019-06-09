@@ -14,10 +14,8 @@
                                         NEW SEASON
                                     </h2>
                                 </div>
-                                <div class="layer-slick1">
-                                    <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                        Shop Now
-                                    </a>
+                                <div class="layer-slick1" v-on:click="navChange('shop')">
+                                    <router-link to="/shop" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">Shop Now</router-link>
                                 </div>
                             </div>
                         </div>
@@ -35,10 +33,8 @@
                                         Jackets & Coats
                                     </h2>
                                 </div>
-                                <div class="layer-slick1">
-                                    <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                        Shop Now
-                                    </a>
+                                <div class="layer-slick1" v-on:click="navChange('shop')">
+                                    <router-link to="/shop" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">Shop Now</router-link>
                                 </div>
                             </div>
                         </div>
@@ -56,10 +52,8 @@
                                         New arrivals
                                     </h2>
                                 </div>
-                                <div class="layer-slick1">
-                                    <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                        Shop Now
-                                    </a>
+                                <div class="layer-slick1" v-on:click="navChange('shop')">
+                                    <router-link to="/shop" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">Shop Now</router-link>
                                 </div>
                             </div>
                         </div>
@@ -92,6 +86,11 @@ export default {
                 dots: false
             }
         };
+    },
+    methods:{
+        navChange(currentNav) {
+            this.$store.commit('SET_PATHNAME', currentNav);
+        }
     }
 };
 </script>
